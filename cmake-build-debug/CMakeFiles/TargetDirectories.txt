@@ -1,0 +1,3 @@
+C:/MovieTicketBookingSystem/cmake-build-debug/CMakeFiles/MovieTicketBookingSystem.dir
+C:/MovieTicketBookingSystem/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/MovieTicketBookingSystem/cmake-build-debug/CMakeFiles/rebuild_cache.dir
