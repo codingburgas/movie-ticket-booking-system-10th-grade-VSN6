@@ -1,5 +1,6 @@
 #include <iostream>
 #include <movie.h>
+#include <show.h>
 
 #include "include/seat.h"
 #include "include/cinema.h"
@@ -38,10 +39,13 @@ int main() {
             listMovies();
         }
 
+        if (ans == 5) {
+            addShow();
+        }
+
 
         if (ans == 6) {
-            showSeats();
-            return 0;
+            listShows();
         }
 
     }
