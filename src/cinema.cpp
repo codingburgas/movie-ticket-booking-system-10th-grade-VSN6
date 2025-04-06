@@ -6,15 +6,17 @@ int cinemacount = 0;
 Cinema cinemas[5];
 
 void addCinema() {
-//int maxCinema = 5;
+
 if (cinemacount >= 5) {
     cout << "Too many cinemas!" << endl;
     return;
 }
+
     cout << "Enter cinema name: " << endl;
     cin.ignore();
     cin.getline(cinemas[cinemacount].name, 100);
-    cinemas[cinemacount].id = cinemacount++;
+
+    cinemas[cinemacount].id = cinemacount + 1;
     cinemacount++;
     cout << "Cinema added!" << endl;
 }
@@ -22,7 +24,7 @@ if (cinemacount >= 5) {
 
 void showCinemas() {
     for (int i = 0; i < cinemacount; i++) {
-        cout << cinemas[i].name <<"  " << cinemas[i].id << endl;
+        cout << i+1 << "||" << cinemas[i].name <<" ID " << cinemas[i].id << endl;
     }
 
 

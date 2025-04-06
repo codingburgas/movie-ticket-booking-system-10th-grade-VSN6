@@ -3,8 +3,12 @@
 #define MOVIE_H
 
 void listMovies();
-void addMovie(const char* title);
+void addMovie();
 
+struct movie {
+    char name[100];
+    int year;
+};
 
 
 
