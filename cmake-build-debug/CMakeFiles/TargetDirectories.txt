@@ -1,0 +1,3 @@
+C:/movie-ticket-booking-system/movie-ticket-booking-system-10th-grade-VSN6/cmake-build-debug/CMakeFiles/MovieTicketBookingSystem.dir
+C:/movie-ticket-booking-system/movie-ticket-booking-system-10th-grade-VSN6/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/movie-ticket-booking-system/movie-ticket-booking-system-10th-grade-VSN6/cmake-build-debug/CMakeFiles/rebuild_cache.dir
