@@ -13,9 +13,9 @@ void addShow() {
         return;
     }
     cin.ignore();
-    cout << "Enter the name of cinema: " << endl;
-    cin.getline(shows[showCount].cinemaName, 100);
-
+    cout << "Choose the cinema " << endl;
+    //cin.getline(shows[showCount].cinemaName, 100);
+    showCinemas();
     cout << "Enter show ID:" << endl;
     cin >> shows[showCount].showId, 100;
     cin.ignore();

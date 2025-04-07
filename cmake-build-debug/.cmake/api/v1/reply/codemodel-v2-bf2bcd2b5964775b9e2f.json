@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.30"
+						"string" : "3.25"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "MovieTicketBookingSystem::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MovieTicketBookingSystem-Debug-faa0a6891a709d7d7514.json",
+					"jsonFile" : "target-MovieTicketBookingSystem-Debug-e6d9582b42f21d84fadb.json",
 					"name" : "MovieTicketBookingSystem",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/movie-ticket-booking-system/movie-ticket-booking-system-10th-grade-VSN6/cmake-build-debug",
-		"source" : "C:/movie-ticket-booking-system/movie-ticket-booking-system-10th-grade-VSN6"
+		"build" : "C:/Users/VSNikolenko22/myprjct/movie-ticket-booking-system-10th-grade-VSN6/cmake-build-debug",
+		"source" : "C:/Users/VSNikolenko22/myprjct/movie-ticket-booking-system-10th-grade-VSN6"
 	},
 	"version" : 
 	{

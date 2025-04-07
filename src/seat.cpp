@@ -13,7 +13,16 @@ void showSeats() {
       cout << endl;
         for(int j=0; j<5; j++) {
             cout << seatMap[i][j] << " || ";
-
+        }
+    }
+    cout << "Choose the seat" << endl;
+    int seatnum;
+    cin >> seatnum;
+    for(int i=0; i<5; i++) {
+        for(int j=0; j<5; j++) {
+           if(seatnum == seatMap[i][j]){
+               cout << "Seat is added";
+           }
 
         }
     }
