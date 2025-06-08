@@ -1,13 +1,14 @@
 #include <iostream>
 #include <movie.h>
 #include <show.h>
-
+#include "user.h"
 #include "include/seat.h"
 #include "include/cinema.h"
 
 using namespace std;
 
 int main() {
+   
     int ans;
     cout << "WELCOME" << endl << "Before you book a place, you need to answer a few questions." << endl << "  "<< endl;
     while (true) {
@@ -22,33 +23,19 @@ int main() {
         cout << "  || 0. Exit                       ||" << endl;
         cout << "     _____________________________   " << endl;
         cin >> ans;
-        if (ans == 0) {
-            exit(0);
-        }
-        if (ans == 2) {
-            showCinemas();
-        }
+        if (ans == 0) exit(0);
+        if (ans == 2) showCinemas();
 
-        if (ans == 1) {
-            addCinema();
-        }
+        if (ans == 1) addCinema();
 
-        if (ans == 3) {
-            addMovie();
-        }
+        if (ans == 3) addMovie();
 
-        if (ans == 4) {
-            listMovies();
-        }
+        if (ans == 4) listMovies();
 
-        if (ans == 5) {
-            addShow();
-        }
+        if (ans == 5) addShow();
 
+        if (ans == 6) listShows();
 
-        if (ans == 6) {
-            listShows();
-        }
 
     }
 }
