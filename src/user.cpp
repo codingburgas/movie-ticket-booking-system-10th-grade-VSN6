@@ -5,11 +5,13 @@ using namespace std;
 
 user::user() {}
 
-bool registerUser() {
+bool user::registerUser() {
   cout << "Registering user" << endl << "Enter username: " << endl;
-  cin << this->username << endl;
+  cin >> username;
+  cout << endl;
   cout << "Enter password: " << endl;
-  cin << this->password << endl;
+  cin >> password;
+  cout << endl;
 
 
   ofstream file("users.txt", ios::app);

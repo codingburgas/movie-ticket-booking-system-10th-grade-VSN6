@@ -11,4 +11,5 @@ add_executable(MovieTicketBookingSystem
         src/movie.cpp
         src/seat.cpp
         src/show.cpp
+        src/user.cpp
 )

@@ -8,7 +8,26 @@
 using namespace std;
 
 int main() {
-   
+    int choice;
+    user u;
+    while(true){
+
+        cout << "Welcome to Movie Booking System"<<endl;
+        cout <<"1. Register" << endl << "2. Login" <<endl << "Exit" << endl << "Your choice: ";
+         cin >> choice;
+
+        if (choice == 1) {
+            if (u.registerUser()) break;
+        } else if (choice == 2) {
+            if (u.loginUser()) break;
+        } else if (choice == 0) {
+            return 0;
+        }
+        else{
+            cout << "Invalid choice";
+        }
+    }
+
     int ans;
     cout << "WELCOME" << endl << "Before you book a place, you need to answer a few questions." << endl << "  "<< endl;
     while (true) {
