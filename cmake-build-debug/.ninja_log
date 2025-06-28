@@ -1,12 +1,19 @@
 # ninja log v6
 5	506	7710950096572937	CMakeFiles/MovieTicketBookingSystem.dir/main.cpp.obj	6d5485e7989c3a0f
-366	443	7710938129684699	MovieTicketBookingSystem.exe	e4fc229b41e98767
+816	920	7710965987189970	MovieTicketBookingSystem.exe	704bd3946d22a320
 4	15	7656396840580747	clean	a912d6e803ee3202
-43	513	7710965977514046	build.ninja	1e89a6f9b255f6f1
+6	386	7728059088705827	build.ninja	9f7dcacc8e1f2d42
 19	753	7710894022453305	CMakeFiles/MovieTicketBookingSystem.dir/src/cinema.cpp.obj	25f792258011d21b
 27	736	7710894022533307	CMakeFiles/MovieTicketBookingSystem.dir/src/seat.cpp.obj	3b2bc2571a0a3bbc
 23	753	7710894022493311	CMakeFiles/MovieTicketBookingSystem.dir/src/movie.cpp.obj	5d970e55bbed39fe
 33	768	7710894022603321	CMakeFiles/MovieTicketBookingSystem.dir/src/show.cpp.obj	f226546313633384
-6	386	7710965977514046	build.ninja	9f7dcacc8e1f2d42
 79	816	7710965979813996	CMakeFiles/MovieTicketBookingSystem.dir/src/user.cpp.obj	bfe25c86643f9888
-816	920	7710965987189970	MovieTicketBookingSystem.exe	704bd3946d22a320
+71	1121	7728059553647234	CMakeFiles/MovieTicketBookingSystem.dir/src/cinema.cpp.obj	642cf854fee7391f
+92	1123	7728059553852173	CMakeFiles/MovieTicketBookingSystem.dir/src/seat.cpp.obj	73f4d3518395e976
+82	1123	7728059553750755	CMakeFiles/MovieTicketBookingSystem.dir/src/movie.cpp.obj	cf69eb0f819a74e5
+56	1135	7728059553493603	CMakeFiles/MovieTicketBookingSystem.dir/main.cpp.obj	3b43d01949f6e727
+105	1136	7728059553982951	CMakeFiles/MovieTicketBookingSystem.dir/src/show.cpp.obj	c14606b4b6b324fa
+116	1191	7728059554091539	CMakeFiles/MovieTicketBookingSystem.dir/src/user.cpp.obj	701403397915c546
+1191	1528	7728059564831990	MovieTicketBookingSystem.exe	704bd3946d22a320
+12	855	7728061548121608	CMakeFiles/MovieTicketBookingSystem.dir/src/cinema.cpp.obj	642cf854fee7391f
+856	1040	7728061556552196	MovieTicketBookingSystem.exe	704bd3946d22a320
