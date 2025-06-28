@@ -8,6 +8,7 @@
 using namespace std;
 
 int main() {
+    loadCinemasFromFile();
     int choice;
     user u;
     while(true){

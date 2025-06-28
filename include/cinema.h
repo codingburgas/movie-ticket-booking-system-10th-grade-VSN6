@@ -14,5 +14,5 @@ extern int cinemacount;
 
 void addCinema();
 void showCinemas();
-
+void loadCinemasFromFile();
 #endif //CINEMA_H
