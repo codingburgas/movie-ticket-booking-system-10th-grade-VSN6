@@ -1,6 +1,7 @@
 #include "user.h"
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 using namespace std;
 
 user::user() {}
@@ -13,6 +14,14 @@ bool user::registerUser() {
   cin >> password;
   cout << endl;
 
+  role = (username == "admin" && password == "admin123") ? "admin" : "user";
+
+  if (username == "admin" && password == "admin123") {
+    role = "admin";
+  }
+  else{
+    role = "user";
+  }
 
   ofstream file("users.txt", ios::app);
 
@@ -21,11 +30,13 @@ bool user::registerUser() {
     return false;
   }
 
-  file << username << " " << password << endl;
-  file.close();
+  file <<username<< " " <<password<< " " <<role<< endl;
+  file.flush();
   cout << "Registration was successful" << endl;
   return true;
 }
+
+
 
 bool user::loginUser() {
   string inputUser, inputPassw;
@@ -34,14 +45,16 @@ bool user::loginUser() {
   cout << "Enter password: " << endl;
   cin >> inputPassw;
 
-
   ifstream file("users.txt");
-  string user, pass;
+  string fileUser, filePass, fileRole;
 
-  while (file >> user >> pass) {
-    if (user == inputUser && pass == inputPassw){
+  while (file>>fileUser>>filePass>>fileRole) {
+    if (inputUser==fileUser && inputPassw ==filePass) {
+      username=fileUser;
+      password=filePass;
+      role =fileRole;
 
-      cout << "Succesful login" << endl;
+      cout << "Succesful login"<< endl;
       return true;
      }
   }

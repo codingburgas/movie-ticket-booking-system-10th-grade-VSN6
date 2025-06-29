@@ -7,12 +7,12 @@ using namespace std;
 
 class user {
 
-    private:
+public:
         string username;
         string password;
+        string role;
 
-    public:
-        user();
+    user();
         bool registerUser();
         bool loginUser();
     };
