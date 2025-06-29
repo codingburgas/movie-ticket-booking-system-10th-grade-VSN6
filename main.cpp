@@ -8,6 +8,7 @@
 using namespace std;
 
 int main() {
+    vector<Movie> movies = loadMovies();
     loadCinemasFromFile();
     int choice;
     user u;
@@ -38,9 +39,10 @@ int main() {
             cout << "  || 1. Add cinema                 ||"<< endl;
             cout << "  || 2. Show cinemas               ||"<< endl;
             cout << "  || 3. Add movie                  ||"<< endl;
-            cout << "  || 4. Show movies                ||"<< endl;
-            cout << "  || 5. Add show                   ||"<< endl;
-            cout << "  || 6. Book a place               ||" << endl;
+            cout << "  || 4. Remove movie               ||"<< endl;
+            cout << "  || 5. Show movies                ||"<< endl;
+            cout << "  || 6. Add show                   ||"<< endl;
+            cout << "  || 7. Book a place               ||" << endl;
             cout << "  || 0. Exit                       ||" << endl;
             cout << "     _____________________________   " << endl;
             cin >> ans;
@@ -49,13 +51,15 @@ int main() {
 
             if (ans == 1) addCinema();
 
-            if (ans == 3) addMovie();
+            if (ans == 3) addMovie(movies);
 
-            if (ans == 4) listMovies();
+            if (ans == 4) removeMovie(movies);
 
-            if (ans == 5) addShow();
+            if (ans == 5) showMovies(movies);
 
-            if (ans == 6) listShows();
+            if (ans == 6) addShow();
+
+            if (ans == 7) listShows();
         }
         }    else {
         while (true) {
@@ -68,7 +72,7 @@ int main() {
             cin >> ans;
             if (ans == 0) exit(0);
             if (ans == 1) showCinemas();
-            if (ans == 2) listMovies();
+            if (ans == 2) showMovies(movies);
             if (ans == 3) listShows();
             }
         }
