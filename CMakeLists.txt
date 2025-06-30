@@ -9,7 +9,7 @@ add_executable(MovieTicketBookingSystem
         main.cpp
         src/cinema.cpp
         src/movie.cpp
-        src/seat.cpp
+        
         src/show.cpp
         src/user.cpp
-)
+ "include/hall.h" "src/hall.cpp")

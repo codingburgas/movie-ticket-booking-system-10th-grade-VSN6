@@ -2,15 +2,15 @@
 #include <movie.h>
 #include <show.h>
 #include <user.h>
-#include "include/seat.h"
-#include "include/cinema.h"
 
+#include "include/cinema.h"
+#include "include/hall.h"
 using namespace std;
 
 int main() {
     vector<Movie> movies = loadMovies();
     loadCinemasFromFile();
-    loadSeats();
+    
     int choice;
     user u;
     cout << "Welcome to Movie Booking System"<<endl;
@@ -62,7 +62,9 @@ int main() {
 
             if (ans == 7) listShows();
 
-            if (ans == 8)  showSeats();
+            if (ans == 8)  showHallSeats();
+            if (ans == 9)  addHall();
+            
 
 
         }

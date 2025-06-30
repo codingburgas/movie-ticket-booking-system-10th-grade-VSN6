@@ -41,7 +41,7 @@ void addCinema() {
 
     cout << "Enter cinema name: " << endl;
     cin.ignore();
-    cin.getline(cinemas[cinemacount].name, 100);\
+    cin.getline(cinemas[cinemacount].name, 100);
 
     cout << "Enter city: ";
     cin.getline(cinemas[cinemacount].city, 100);
