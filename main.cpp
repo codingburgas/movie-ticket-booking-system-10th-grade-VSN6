@@ -18,13 +18,13 @@ int main() {
         while(true){
 
 
-            cout <<"1. Register" << endl << "2. Login" <<endl << "Exit" << endl << "Your choice: ";
-            cin >> choice;
-            if (choice == 1) {
-                if (u.registerUser()) break;
-            } else if (choice == 2) {
+            cout <<"1. Register" <<endl << "2. Login" <<endl << "Exit"<< endl << "Your choice: ";
+            cin >>choice;
+            if (choice==1){
+                if(u.registerUser()) break;
+            } else if(choice== 2){
                 if (u.loginUser()) break;
-            } else if (choice == 0) {
+            } else if (choice == 0){
                 return 0;
             }
             else{
@@ -34,8 +34,8 @@ int main() {
 
         int ans;
         cout << "WELCOME"  << endl;
-        if (u.role == "admin") {
-        while (true) {
+        if (u.role == "admin"){
+        while (true){
             cout << "    _____________Menu_____________" << endl;
             cout << "  || 1. Add cinema                 ||"<< endl;
             cout << "  || 2. Show cinemas               ||"<< endl;

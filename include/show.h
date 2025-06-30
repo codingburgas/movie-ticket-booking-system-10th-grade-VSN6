@@ -5,13 +5,15 @@
 #include <string>
 using namespace std;
 
-struct Show {
+struct Show{
     int id;             
     int hallId;         
     string movieTitle;  
     string datetime;  
     float price;
 };
+
+
 
 void addShow();       
 void listShows();    

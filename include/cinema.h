@@ -11,8 +11,11 @@ struct Cinema {
 extern Cinema cinemas[10];
 extern int cinemacount;
 
-
 void addCinema();
+
 void showCinemas();
 void loadCinemasFromFile();
+
+
+
 #endif 

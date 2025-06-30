@@ -13,13 +13,13 @@ string getShowFile() {
     return "shows.txt";
 }
 
-int generateNewShowId() {
+int generateNewShowId(){
     ifstream file(getShowFile());
-    int maxId = 0, id, hallId;
-    string title, datetime;
-    while (file >> id >> hallId) {
+    int maxId=0, id, hallId;
+    string title,datetime;
+    while (file>> id >>hallId) {
         file.ignore();
-        getline(file, title);
+        getline(file,title);
         getline(file, datetime);
         if (id > maxId) maxId = id;
     }

@@ -5,12 +5,13 @@
 using namespace std;
 
 
-class user {
+class user{
 
 public:
         string username;
         string password;
         string role;
+
 
     user();
         bool registerUser();

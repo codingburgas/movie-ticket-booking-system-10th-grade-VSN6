@@ -10,49 +10,55 @@ using namespace std;
 
 
 string getHallFilename(int hallId) {
-    return "hall_" + to_string(hallId) + ".txt";
+    return "hall_" +to_string(hallId) + ".txt";
+
 }
 
 
-int generateNewHallId() {
+int generateNewHallId(){
     ifstream file("halls.txt");
-    int maxId = 0, id, cinemaId;
-    while (file >> id >> cinemaId) {
-        if (id > maxId) maxId = id;
+    int maxId=0, id, cinemaId;
+    while (file >>id >> cinemaId) {
+        if (id>maxId) maxId= id;
     }
-    return maxId + 1;
+
+    return maxId++;
+
 }
 
 
-void addHall() {
+void addHall(){
     int cinemaId;
     cout << "Choose cinema ID for which add hall" << endl;
     showCinemas();
-    cin >> cinemaId;
+    cin >>cinemaId;
     int id = generateNewHallId();
+
+
     ofstream file("halls.txt", ios::app);
-    file << id << " " << cinemaId << endl;
+    file << id << " "<< cinemaId <<endl;
     file.close();
 
     float seats[rows][cols];
-    for (int i = 0; i < rows; ++i) {
-        float value = i + 1 + 0.1;
-        for (int j = 0; j < cols; ++j) {
-            seats[i][j] = value;
+    for (int i = 0; i < rows; i++) {
+    float value = i+1+0.1;
+        for (int j = 0; j < cols; j++) {
+            seats[i][j]=value;
             value += 0.1;
         }
     }
+
     saveHallSeats(id, seats);
 
     cout << "Hall with ID " << id << " added to cinema " << cinemaId << "." << endl;
 }
 
 
-void saveHallSeats(int hallId, float seats[rows][cols]) {
+void saveHallSeats(int hallId,float seats[rows][cols]){
     ofstream file(getHallFilename(hallId));
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            file << seats[i][j] << " ";
+    for (int i = 0; i < rows; ++i)  {
+        for(int j = 0; j < cols; ++j) {
+            file <<seats[i][j]<< " ";
         }
         file << endl;
     }
@@ -60,27 +66,31 @@ void saveHallSeats(int hallId, float seats[rows][cols]) {
 
 void loadHallSeats(int hallId, float seats[rows][cols]) {
     ifstream file(getHallFilename(hallId));
+
     if (file.is_open()) {
         for (int i = 0; i < rows; ++i)
             for (int j = 0; j < cols; ++j)
                 file >> seats[i][j];
+
+
     }
+
 }
 
 
 void showHallSeats() {
     int hallId;
-    cout << "Avaible shows" << endl;
+    cout <<"Avaible shows"<<endl;
     listShows();
-        cout << "Enter hall id" << endl;
-        cin >> hallId;
+        cout<< "Enter hall id"<<endl;
+        cin >>hallId;
     float seats[rows][cols];
     loadHallSeats(hallId, seats);
 
-    cout << "--- Hall " << hallId << " Layout ---" << endl;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            if (seats[i][j] == 0.0)
+    cout<< "--- Hall " << hallId << " Layout ---" <<endl;
+    for (int i =0; i<rows; i++){
+        for (int j = 0; j <cols;j++) {
+            if (seats[i][j]==0.0)
                 cout << "XX || ";
             else
                 cout << seats[i][j] << " || ";
@@ -91,37 +101,42 @@ void showHallSeats() {
     cout << "Choose a seat (0 to cancel): ";
     float seatNum;
     cin >> seatNum;
-    if (seatNum == 0) return;
 
-    bool found = false;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            if (fabs(seats[i][j] - seatNum) < 0.001) {
-                if (seats[i][j] == 0.0) {
-                    cout << "Already taken." << endl;
+    if(seatNum == 0) return;
+
+    bool found =false;
+    for(int i=0; i<rows; i++){
+        for (int j = 0; j <cols;j++){
+            if(fabs(seats[i][j] -seatNum)<0.001) {
+                if(seats[i][j] ==0.0) {
+                    cout <<"Already taken."<< endl;
                 }
                 else {
                     processPayment();
-                    seats[i][j] = 0.0;
+                    seats[i][j]=0.0;
                     saveHallSeats(hallId, seats);
-                    cout << "Seat booked!" << endl;
+                    cout <<"Seat booked!" << endl;
                 }
-                found = true;
+                found=true;
                 break;
+
             }
         }
+
+
     }
 
-    if (!found) {
-        cout << "No such seat." << endl;
+    if (!found){
+        cout << "No such seat." << endl; 
     }
+
 }
 
-void listHalls() {
+void listHalls(){
     ifstream file("halls.txt");
     int id, cinemaId;
-    cout << "--- Halls ---" << endl;
-    while (file >> id >> cinemaId) {
-        cout << "Hall ID: " << id << " | Cinema ID: " << cinemaId << endl;
+    cout << "--- Halls ---"<< endl;
+    while (file >> id >> cinemaId){
+        cout << "Hall ID: "<<id<< " | Cinema ID: "<<cinemaId<<endl;
     }
 }

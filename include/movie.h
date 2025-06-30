@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-class Movie {
+class Movie{
 public:
     string title;
     string genre;
@@ -13,7 +13,7 @@ public:
     string rating;
 
     Movie();
-    Movie(string t, string g, int d, string r);
+    Movie(string t, string g , int d, string r );
     string toString() const;
 };
 
