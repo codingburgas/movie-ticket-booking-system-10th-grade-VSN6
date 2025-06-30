@@ -80,7 +80,8 @@ int main() {
             if (ans == 0) exit(0);
             if (ans == 1) showCinemas();
             if (ans == 2) showMovies(movies);
-            if (ans == 3) listShows();
+            if (ans == 3) showHallSeats();
+         
             }
         }
 

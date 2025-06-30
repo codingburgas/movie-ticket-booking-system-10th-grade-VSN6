@@ -6,14 +6,16 @@
 using namespace std;
 
 struct Show {
-    int id;             // уникальный ID сеанса
-    int hallId;         // ID зала
-    string movieTitle;  // название фильма
-    string datetime;    // дата и время
+    int id;             
+    int hallId;         
+    string movieTitle;  
+    string datetime;  
+    float price;
 };
 
-void addShow();       // добавить новый сеанс
-void listShows();     // показать все сеансы
+void addShow();       
+void listShows();    
 int generateNewShowId();
+void updateShowPrice();
 
-#endif //SHOW_H
+#endif 

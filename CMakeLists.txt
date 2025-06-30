@@ -12,4 +12,4 @@ add_executable(MovieTicketBookingSystem
         
         src/show.cpp
         src/user.cpp
- "include/hall.h" "src/hall.cpp")
+ "include/hall.h" "src/hall.cpp" "include/payment.h" "src/payment.cpp")

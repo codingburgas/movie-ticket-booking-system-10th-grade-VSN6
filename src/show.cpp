@@ -29,6 +29,7 @@ int generateNewShowId() {
 void addShow() {
     int hallId;
     string movieTitle, datetime;
+    float price;
 
     cout << "--- Add new show ---" << endl;
     listHalls();
@@ -42,9 +43,12 @@ void addShow() {
     cout << "Enter date & time (e.g. 2025-07-01 18:30): ";
     getline(cin, datetime);
 
+    cout << "Enter ticket price: ";
+    cin >> price;
+
     int showId = generateNewShowId();
-    ofstream file(getShowFile(), ios::app);
-    file << showId << " " << hallId << endl;
+    ofstream file("shows.txt", ios::app);
+    file << showId << " " << hallId << " " << price << endl;
     file << movieTitle << endl;
     file << datetime << endl;
     file.close();
@@ -53,22 +57,25 @@ void addShow() {
 }
 
 void listShows() {
-    ifstream file(getShowFile());
+    ifstream file("shows.txt");
     if (!file.is_open()) {
         cout << "No shows available." << endl;
         return;
     }
 
     int id, hallId;
+    float price;
     string title, datetime;
+
     cout << "--- Available Shows ---" << endl;
-    while (file >> id >> hallId) {
+    while (file >> id >> hallId >> price) {
         file.ignore();
         getline(file, title);
         getline(file, datetime);
         cout << "Show ID: " << id
             << " | Movie: " << title
             << " | Hall ID: " << hallId
-            << " | DateTime: " << datetime << endl;
+            << " | DateTime: " << datetime
+            << " | Price: " << price << " BGN" << endl;
     }
 }

@@ -4,6 +4,8 @@
 #include <cmath>
 #include "hall.h"
 #include <cinema.h>
+#include <show.h>
+#include <payment.h>
 using namespace std;
 
 
@@ -11,7 +13,7 @@ string getHallFilename(int hallId) {
     return "hall_" + to_string(hallId) + ".txt";
 }
 
-// Генерация нового ID зала
+
 int generateNewHallId() {
     ifstream file("halls.txt");
     int maxId = 0, id, cinemaId;
@@ -21,7 +23,7 @@ int generateNewHallId() {
     return maxId + 1;
 }
 
-// Добавление нового зала
+
 void addHall() {
     int cinemaId;
     cout << "Choose cinema ID for which add hall" << endl;
@@ -45,7 +47,7 @@ void addHall() {
     cout << "Hall with ID " << id << " added to cinema " << cinemaId << "." << endl;
 }
 
-// Сохранение карты мест
+
 void saveHallSeats(int hallId, float seats[rows][cols]) {
     ofstream file(getHallFilename(hallId));
     for (int i = 0; i < rows; ++i) {
@@ -56,7 +58,6 @@ void saveHallSeats(int hallId, float seats[rows][cols]) {
     }
 }
 
-// Загрузка карты мест
 void loadHallSeats(int hallId, float seats[rows][cols]) {
     ifstream file(getHallFilename(hallId));
     if (file.is_open()) {
@@ -69,14 +70,14 @@ void loadHallSeats(int hallId, float seats[rows][cols]) {
 
 void showHallSeats() {
     int hallId;
-    cout << "Avaible halls" << endl;
-    listHalls();
+    cout << "Avaible shows" << endl;
+    listShows();
         cout << "Enter hall id" << endl;
         cin >> hallId;
     float seats[rows][cols];
     loadHallSeats(hallId, seats);
 
-    cout << "--- Hall #" << hallId << " Layout ---" << endl;
+    cout << "--- Hall " << hallId << " Layout ---" << endl;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (seats[i][j] == 0.0)
@@ -100,6 +101,7 @@ void showHallSeats() {
                     cout << "Already taken." << endl;
                 }
                 else {
+                    processPayment();
                     seats[i][j] = 0.0;
                     saveHallSeats(hallId, seats);
                     cout << "Seat booked!" << endl;
@@ -115,7 +117,6 @@ void showHallSeats() {
     }
 }
 
-// Список всех залов
 void listHalls() {
     ifstream file("halls.txt");
     int id, cinemaId;
