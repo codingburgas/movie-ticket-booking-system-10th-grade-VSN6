@@ -10,6 +10,7 @@ using namespace std;
 int main() {
     vector<Movie> movies = loadMovies();
     loadCinemasFromFile();
+    loadSeats();
     int choice;
     user u;
     cout << "Welcome to Movie Booking System"<<endl;
@@ -60,6 +61,10 @@ int main() {
             if (ans == 6) addShow();
 
             if (ans == 7) listShows();
+
+            if (ans == 8)  showSeats();
+
+
         }
         }    else {
         while (true) {

@@ -1,43 +1,67 @@
 #include <iostream>
 #include "seat.h"
-#include <iostream>
+#include <fstream>
 #include <cmath>
 using namespace std;
 
-float seatMap[5][5] = {
-    {1.1, 1.2, 1.3, 1.4, 1.5},
-    {2.1, 2.2, 2.3, 2.4, 2.5},
-    {3.1, 3.2, 3.3, 3.4, 3.5},
-    {4.1, 4.2, 4.3, 4.4, 4.5},
-    {5.1, 5.2, 5.3, 5.4, 5.5}
-};
+float seatMap[rows][cols];
+
+void loadSeats() {
+    ifstream file("seats.txt");
+    if (file.is_open()) {
+        for (int i = 0; i < rows; ++i)
+            for (int j = 0; j < cols; ++j)
+                file >> seatMap[i][j];
+        file.close();
+    }
+    else{
+        for (int i = 0; i < rows; ++i){
+            float value = i + 1 + 0.1;
+            for (int j = 0; j < cols; ++j){
+                seatMap[i][j] = value;
+                value += 0.1;
+            }
+        }
+        saveSeats(); }
+}
+
+void saveSeats() {
+    ofstream file("seats.txt");
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            file << seatMap[i][j] << " ";
+        }
+        file << endl;
+    }
+    file.close();
+}
 
 void showSeats() {
-    cout << "Map of places" << endl;
-    for(int i=0; i<5; i++) {
-        for(int j=0; j<5; j++) {
+    cout << "--- Hall layout ---" << endl;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
             if (seatMap[i][j] == 0.0)
-                cout << "XX"
-                     << "  || ";
+                cout << "XX  || ";
             else
                 cout << seatMap[i][j] << " || ";
         }
         cout << endl;
     }
 
-    cout << "Select a place ";
+    cout << "Choose a seat ";
     float seatNum;
     cin >> seatNum;
 
     bool found = false;
-    for(int i=0; i<5; i++) {
-        for(int j=0; j<5; j++) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
             if (fabs(seatMap[i][j] - seatNum) < 0.001) {
                 if (seatMap[i][j] == 0.0) {
-                    cout << "This place is already taken" << endl;
+                    cout << "The place is already taken." << endl;
                 } else {
                     seatMap[i][j] = 0.0;
-                    cout << "The place has been successfully booked " << endl;
+                    saveSeats();
+                    cout << "The place has been successfully booked!" << endl;
                 }
                 found = true;
                 break;
@@ -46,6 +70,6 @@ void showSeats() {
     }
 
     if (!found) {
-        cout << "There is no such place " << endl;
+        cout << "There is no such place." << endl;
     }
 }

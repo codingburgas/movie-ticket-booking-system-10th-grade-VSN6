@@ -1,11 +1,16 @@
 
 #ifndef SEAT_H
 #define SEAT_H
-extern float seatMap[5][5];
+
+
+const int rows = 5;
+const int cols = 5;
+extern float seatMap[rows][cols];
+
+
+void loadSeats();
+void saveSeats();
 void showSeats();
-bool bookSeat(int row, int col);
-
-
 
 
 #endif //SEAT_H

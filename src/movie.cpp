@@ -41,9 +41,9 @@ void saveMovies(const vector<Movie>& movies) {
 }
 
 void showMovies(const vector<Movie>& movies) {
-    cout << "\n--- Films list ---" << endl;
+    cout << "--- Films list ---" << endl;
     for (const Movie& m : movies) {
-        cout << m.title << " | " << m.genre << " | " << m.duration << " мин | " << m.rating << endl;
+        cout << m.title << " | " << m.genre << " | " << m.duration << " minutes | " << m.rating << endl;
     }
 }
 
@@ -101,5 +101,5 @@ void removeMovie(vector<Movie>& movies) {
     movies.erase(movies.begin() + index - 1);
     saveMovies(movies);
 
-    cout << "Movie \"" << deletedTitle << "\" deleted." << endl;
+    cout << "Movie " << deletedTitle << " deleted." << endl;
 }
